@@ -19,7 +19,7 @@
 <c:set var="contextPath" value="${pageContext.request.contextPath}"/>
 
 <head>
-    <title>DictionaryApp</title>
+    <title>IOT App</title>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
     <!--<meta http-equiv="PRAGMA" content="NO-CACHE"/>-->
     <meta name="_csrf" content="${_csrf.token}"/>
