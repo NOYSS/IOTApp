@@ -1,0 +1,247 @@
+@keyframes checked-anim {
+    50% {
+        width: 3000px;
+        height: 3000px;
+    }
+    100% {
+        width: 100%;
+        height: 100%;
+        border-radius: 0;
+    }
+}
+
+@keyframes not-checked-anim {
+    0% {
+        width: 3000px;
+        height: 3000px;
+    }
+}
+
+li.menu-custom, a.menu-custom {
+    margin: 75px 0 -55px 0;
+    color: #03A9F4;
+    font: 14pt "Roboto", sans-serif;
+    font-weight: 700;
+    line-height: 1.8;
+    text-decoration: none;
+    text-transform: none;
+    list-style: none;
+    outline: 0;
+    display: none;
+}
+
+ul.menu-custom {
+    z-index: 900;
+}
+
+li.menu-custom {
+    width: 230px;
+    text-indent: 56px;
+}
+
+a.menu-custom:focus {
+    display: block;
+    color: #333;
+    background-color: #eee;
+    transition: all .5s;
+}
+
+a.menu-custom:hover {
+    display: block;
+    color: #06a0f4;
+    text-shadow: 2px 4px 3px rgba(3, 113, 244, 0.47);
+    background-color: #eee;
+    transition: all .5s;
+}
+
+aside.menu-custom {
+    position: fixed;
+    color: white;
+    top: 35%;
+    right: 10%;
+    text-align: right;
+}
+
+/*html, body {*/
+/*margin: 0;*/
+/*padding: 0;*/
+/*background-color: rgb(242, 245, 247);*/
+/*font-family: 'Roboto', sans-serif;*/
+/*overflow: hidden;*/
+/*}*/
+
+#triggercustom, #burger, #burger:before, #burger:after {
+    position: fixed;
+    top: 45px;
+    left: 25px;
+    background: #03A9F4;
+    width: 30px;
+    height: 8px;
+    transition: .2s ease;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#triggercustom {
+    height: 25px;
+    background: none;
+}
+
+label#burger:before {
+    content: " ";
+    top: 25px;
+    left: 25px;
+}
+
+label#burger:after {
+    content: " ";
+    top: 35px;
+    left: 25px;
+}
+
+#menucustom-toggle:checked + #triggercustom + #burger {
+    top: 35px;
+    transform: rotate(180deg);
+    transition: transform .2s ease;
+}
+
+#menucustom-toggle:checked + #triggercustom + #burger:before {
+    width: 20px;
+    top: -2px;
+    left: 18px;
+    transform: rotate(45deg) translateX(-5px);
+    transition: transform .2s ease;
+}
+
+#menucustom-toggle:checked + #triggercustom + #burger:after {
+    width: 20px;
+    top: 2px;
+    left: 18px;
+    transform: rotate(-45deg) translateX(-5px);
+    transition: transform .2s ease;
+}
+
+#menucustom {
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    width: 110px;
+    height: 110px;
+    background-color: #fffffff0;
+    border-bottom-right-radius: 100%;
+    box-shadow: 0 2px 5px rgba(3, 90, 245, 0.76);
+    animation: not-checked-anim .2s both;
+    transition: .2s;
+}
+
+#menucustom-toggle:checked + #triggercustom + #burger + #menucustom {
+    animation: checked-anim 1s ease both;
+    z-index: 500;
+}
+
+#menucustom-toggle:checked + #triggercustom ~ #menucustom > li.menu-custom, a.menu-custom {
+    display: block;
+}
+
+[type="checkbox"]:not(:checked).menu-custom, [type="checkbox"]:checked.menu-custom {
+    display: none;
+}
+
+/*-------------------------------- menu-draggable ---------------------------------*/
+
+#element-menu-draggable {
+    background: rgba(5, 93, 216, 0.75);
+    /*border: 1px #000 solid;*/
+    cursor: move;
+    height: 70px;
+    width: 70px;
+    padding: 10px 10px 10px 10px;
+    z-index: 200;
+    border-radius: 100%;
+    position: absolute;
+    box-shadow: 0 2px 5px rgba(3, 90, 245, 0.76);
+}
+
+#element-menu-draggable:hover {
+    background: rgba(2, 102, 255, 0.75);
+    box-shadow: 0 2px 5px rgba(3, 112, 255, 0.76);
+}
+
+#search-menu-draggable {
+    background: rgba(5, 93, 216, 0.75);
+    /*border: 1px #000 solid;*/
+    cursor: move;
+    height: 70px;
+    width: 70px;
+    padding: 10px 10px 10px 10px;
+    z-index: 200;
+    border-radius: 100%;
+    position: absolute;
+    box-shadow: 0 2px 5px rgba(3, 90, 245, 0.76);
+}
+
+#search-menu-draggable:hover {
+    background: rgba(2, 102, 255, 0.75);
+    box-shadow: 0 2px 5px rgba(3, 112, 255, 0.76);
+}
+
+#app-name-draggable {
+    background: rgba(6, 100, 216, 0.75);
+    /*border: 1px #000 solid;*/
+    height: 30px;
+    width: 200px;
+    padding: 10px 10px 10px 10px;
+    z-index: 200;
+    border-radius: 5%;
+    position: fixed;
+    box-shadow: 0 2px 5px rgba(3, 90, 245, 0.76);
+    top: 0;
+    right: 0;
+    padding: 0;
+}
+
+#app-name-draggable:hover {
+    background: rgba(52, 185, 255, 0.75);
+    box-shadow: 0 2px 5px rgba(3, 112, 255, 0.76);
+}
+
+p.app-name-draggable {
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    font-size: 15px;
+    text-align: center;
+    margin: auto;
+    color: white;
+    margin-top: 4px;
+}
+
+p.menu-draggable {
+    text-shadow: 2px 4px 3px rgba(0, 0, 0, 0.3);
+    cursor: pointer;
+    font-size: 35px;
+    text-align: center;
+    margin: auto;
+    color: white;
+}
+
+#snaptarget {
+    height: 100%;
+    width: 100%;
+}
+
+.draggable {
+    width: 90px;
+    height: 80px;
+    float: none;
+    margin: 0 0 0 0;
+    font-size: .9em;
+}
+
+.wrapper {
+    background-image: linear-gradient(0deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent), linear-gradient(90deg, transparent 24%, rgba(255, 255, 255, .05) 25%, rgba(255, 255, 255, .05) 26%, transparent 27%, transparent 74%, rgba(255, 255, 255, .05) 75%, rgba(255, 255, 255, .05) 76%, transparent 77%, transparent);
+    height: 100%;
+    background-size: 45px 45px;
+    /*border: 1px solid black;*/
+    background-color: rgba(67, 67, 67, 0.99);
+    margin: 0px 0px 0px 0px;
+}
