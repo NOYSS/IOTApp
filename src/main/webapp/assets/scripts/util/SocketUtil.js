@@ -30,11 +30,11 @@ SocketUtil.disconnect = function () {
 }
 
 SocketUtil.sendName = function () {
-    stompClient.send("/app/chat", {}, JSON.stringify({'from': 'jkhgjgj', 'text': 'hello'}));
+    stompClient.send("/app/chat", {}, JSON.stringify({'celsiusTemp': 0, 'humidityTemp': 0}));
 }
 
 
 SocketUtil.showGreeting = function (message) {
     $("#id_table_render").empty();
-    $("#id_table_render").append("<h2>" + message.text + "</h2>");
+    $("#id_table_render").append("<h1>Temperature : " + message.celsiusTemp + " *C</h1><h1>Humidity : " + message.humidityTemp + " %</h1>");
 }

@@ -11,7 +11,7 @@
     </script>
 
     <div>
-        <div class="pure-g" id="id_table_render">
+        <div style="color: white;" id="id_table_render">
             <jsp:text/>
         </div>
     </div>

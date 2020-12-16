@@ -5,6 +5,6 @@ import lombok.Data;
 @Data
 public class InputData {
 
-    private String from;
-    private String text;
+    private double celsiusTemp;
+    private double humidityTemp;
 }

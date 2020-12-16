@@ -1,3 +1,3 @@
 $(function () {
-
+    SocketUtil.connect();
 });

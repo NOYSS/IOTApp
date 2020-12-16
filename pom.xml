@@ -116,6 +116,19 @@
 			<artifactId>lombok</artifactId>
 			<optional>true</optional>
 		</dependency>
+
+		<!-- JSONSerializer  -->
+		<dependency>
+			<groupId>net.sf.flexjson</groupId>
+			<artifactId>flexjson</artifactId>
+			<version>2.1</version>
+		</dependency>
+
+		<dependency>
+		<groupId>org.json</groupId>
+		<artifactId>json</artifactId>
+		<version>20200518</version>
+		</dependency>
 	</dependencies>
 
 	<build>
