@@ -3,7 +3,9 @@
      xmlns:jsp="http://java.sun.com/JSP/Page" xmlns:spring="http://www.springframework.org/tags"
      xmlns:tiles="http://tiles.apache.org/tags-tiles" xmlns:form="http://www.springframework.org/tags/form"
      version="2.0">
-    <spring:url value="/resources/assets/images/image-not-found.png" var="image_not_found" />
+    <spring:url value="/resources/assets/images/image-not-found.png" var="image_not_found"/>
+    <spring:url value="/resources/assets/images/sensor/004-centigrade.png" var="image_thermometer"/>
+    <spring:url value="/resources/assets/images/sensor/003-humidity-1.png" var="image_humidity"/>
     <script>
         <![CDATA[
         var URL_IMAGE_NOT_FOUND = '${image_not_found}';
@@ -11,8 +13,27 @@
     </script>
 
     <div>
-        <div style="color: white;" id="id_table_render">
-            <jsp:text/>
+        <div class="pure-g" id="id_table_render">
+            <div class="pure-u-1 pure-u-sm-1-4">
+            <div class="card" style="width: 100%;margin: 1px;border-radius: 10px;">
+                <img style="width: 64px;height:64px;margin-left: auto;margin-right: auto;margin-top: 10px;" src="${image_thermometer}"
+                     class="card-img-top" alt="Not found!"/>
+                <div class="card-body text-center">
+                    <!--<h5 class="card-title">Temperature</h5>-->
+                    <p style="font-size: 38px;" class="card-text" id="dataTemperature">-- °C</p>
+                </div>
+            </div>
+        </div>
+            <div class="pure-u-1 pure-u-sm-1-4">
+                <div class="card" style="width: 100%;margin: 1px;border-radius: 10px;">
+                    <img style="width: 64px;height:64px;margin-left: auto;margin-right: auto;margin-top: 10px;" src="${image_humidity}"
+                         class="card-img-top" alt="Not found!"/>
+                    <div class="card-body text-center">
+                        <!--<h5 class="card-title">Humidity</h5>-->
+                        <p style="font-size: 38px;" class="card-text" id="dataHumidity">-- %</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 

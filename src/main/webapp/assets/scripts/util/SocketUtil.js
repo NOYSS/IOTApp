@@ -35,6 +35,8 @@ SocketUtil.sendName = function () {
 
 
 SocketUtil.showGreeting = function (message) {
-    $("#id_table_render").empty();
-    $("#id_table_render").append("<h1>Temperature : " + message.celsiusTemp + " *C</h1><h1>Humidity : " + message.humidityTemp + " %</h1>");
+    $("#dataTemperature").empty();
+    $("#dataHumidity").empty();
+    $("#dataTemperature").append(message.celsiusTemp + " °C");
+    $("#dataHumidity").append(message.humidityTemp + " %");
 }
